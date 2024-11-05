@@ -1,15 +1,10 @@
 <script lang="ts">
 	import { devDependencies } from '../data/devDependencies'
 
+	let {
+		handleSelected
+	}: { handleSelected: (dependency: (typeof devDependencies)[number]['name']) => void } = $props()
 	let selected: (typeof devDependencies)[number]['name'][] = $state([])
-
-	function addSelected(dependency: (typeof devDependencies)[number]['name']) {
-		selected = !selected.includes(dependency)
-			? [...selected, dependency]
-			: selected.filter((item) => item !== dependency)
-	}
-
-	$inspect(selected)
 </script>
 
 <section>
@@ -19,7 +14,7 @@
 				class={`rounded-full border border-dashed border-white px-4 py-1 ${selected.includes(dependency.name) ? 'border-[#BEB2D4] text-[#BEB2D4]' : 'border-white'}`}
 			>
 				<button
-					onclick={() => addSelected(dependency.name)}
+					onclick={() => handleSelected(dependency.name)}
 					class="flex items-center justify-center gap-x-2"
 				>
 					{@html dependency.svg || ''}

@@ -1,6 +1,17 @@
-<script>
+<script lang="ts">
 	import Selector from '../components/Selector.svelte'
 	import Swapy from '../components/Swapy.svelte'
+	import { devDependencies } from '../data/devDependencies'
+
+	let selected: (typeof devDependencies)[number]['name'][] = $state([])
+
+	function handleSelected(dependency: (typeof devDependencies)[number]['name']) {
+		selected = !selected.includes(dependency)
+			? [...selected, dependency]
+			: selected.filter((item) => item !== dependency)
+	}
+
+	$inspect(selected)
 </script>
 
 <header>
@@ -15,5 +26,5 @@
 
 <footer class="grid grid-cols-[0.3fr_auto]">
 	<nav>Nav</nav>
-	<Selector />
+	<Selector {handleSelected} />
 </footer>
