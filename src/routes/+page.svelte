@@ -11,7 +11,7 @@
 			: selected.filter((item) => item !== dependency)
 	}
 
-	$inspect(selected)
+	// $inspect(selected)
 </script>
 
 <header>
@@ -19,7 +19,7 @@
 </header>
 
 <main class="grid grid-cols-[0.3fr_auto_0.2fr] border-y-4 border-y-[#9E66FF]/40 bg-[#2A2D2E] p-4">
-	<Swapy />
+	<Swapy {selected} />
 	<p>Welcome to SvelteKit</p>
 	<p>Welcome to SvelteKit</p>
 </main>
