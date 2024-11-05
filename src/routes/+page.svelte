@@ -1,4 +1,5 @@
 <script>
+	import Selector from '../components/Selector.svelte'
 	import Swapy from '../components/Swapy.svelte'
 </script>
 
@@ -12,6 +13,7 @@
 	<p>Welcome to SvelteKit</p>
 </main>
 
-<footer>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<footer class="grid grid-cols-[0.3fr_auto]">
+	<nav>Nav</nav>
+	<Selector />
 </footer>
