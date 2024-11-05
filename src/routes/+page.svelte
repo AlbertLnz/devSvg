@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SearchNav from '../components/SearchNav.svelte'
 	import Selector from '../components/Selector.svelte'
 	import Swapy from '../components/Swapy.svelte'
 	import { devDependencies } from '../data/devDependencies'
@@ -27,6 +28,6 @@
 </main>
 
 <footer class="grid grid-cols-[0.3fr_auto]">
-	<nav>Nav</nav>
+	<SearchNav />
 	<Selector {selected} {handleSelected} />
 </footer>
