@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Header from '../components/Header.svelte'
 	import SearchNav from '../components/SearchNav.svelte'
 	import Selector from '../components/Selector.svelte'
 	import Swapy from '../components/Swapy.svelte'
@@ -15,9 +16,7 @@
 	// $inspect(selected)
 </script>
 
-<header>
-	<h1>DevSvg</h1>
-</header>
+<Header />
 
 <main
 	class="grid grid-cols-[0.3fr_0.5fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 bg-[#2A2D2E] p-4"
