@@ -2,9 +2,14 @@
 	import { devDependencies } from '../data/devDependencies'
 
 	let {
+		selected,
 		handleSelected
-	}: { handleSelected: (dependency: (typeof devDependencies)[number]['name']) => void } = $props()
-	let selected: (typeof devDependencies)[number]['name'][] = $state([])
+	}: {
+		selected: (typeof devDependencies)[number]['name'][]
+		handleSelected: (dependency: (typeof devDependencies)[number]['name']) => void
+	} = $props()
+
+	// $inspect(selected)
 </script>
 
 <section>

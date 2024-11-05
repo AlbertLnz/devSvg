@@ -20,7 +20,7 @@
 		}
 	})
 
-	$inspect(selected)
+	// $inspect(selected)
 </script>
 
 {#if selected.length > 0}

@@ -26,5 +26,5 @@
 
 <footer class="grid grid-cols-[0.3fr_auto]">
 	<nav>Nav</nav>
-	<Selector {handleSelected} />
+	<Selector {selected} {handleSelected} />
 </footer>
