@@ -18,7 +18,9 @@
 	<h1>DevSvg</h1>
 </header>
 
-<main class="grid grid-cols-[0.3fr_auto_0.2fr] border-y-4 border-y-[#9E66FF]/40 bg-[#2A2D2E] p-4">
+<main
+	class="grid grid-cols-[0.3fr_0.5fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 bg-[#2A2D2E] p-4"
+>
 	<Swapy {selected} />
 	<p>Welcome to SvelteKit</p>
 	<p>Welcome to SvelteKit</p>

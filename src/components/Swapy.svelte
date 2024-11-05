@@ -23,16 +23,24 @@
 	// $inspect(selected)
 </script>
 
-{#if selected.length > 0}
-	<div class="container flex flex-col gap-y-4 p-4">
-		{#each selected as dependency, index}
-			<div class={`section-${index + 1}`} data-swapy-slot={`${dependency}`}>
-				<div class="border-2 border-[#fff] p-4" data-swapy-item={`${index + 1}`}>
-					{dependency}
+<section class="h-full overflow-y-auto">
+	{#if selected.length > 0}
+		<div class="container flex flex-col gap-y-4 p-4">
+			{#each selected as dependency, index}
+				<div class={`section-${index + 1}`} data-swapy-slot={`${dependency}`}>
+					<div class="border-2 border-[#fff] p-4" data-swapy-item={`${index + 1}`}>
+						{dependency}
+					</div>
 				</div>
-			</div>
-		{/each}
-	</div>
-{:else}
-	<p>Add some devDependency!</p>
-{/if}
+			{/each}
+		</div>
+	{:else}
+		<p>Add some devDependency!</p>
+	{/if}
+</section>
+
+<style>
+	section {
+		scrollbar-width: none;
+	}
+</style>
