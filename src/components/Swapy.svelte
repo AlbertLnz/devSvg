@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { createSwapy } from 'swapy'
+	import { createSwapy, type Swapy } from 'swapy'
 	import { onMount } from 'svelte'
 	import { devDependencies } from '../data/devDependencies'
 
 	let { selected }: { selected: (typeof devDependencies)[number][] } = $props()
-	let swapy
+	let swapy: Swapy
 
 	$effect(() => {
 		if (selected.length > 0) {
@@ -34,7 +34,7 @@
 				>
 					<div
 						class="flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
-						data-swapy-item={`${index + 1}`}
+						data-swapy-item={`${dependency.name}`}
 					>
 						{@html dependency.svg}
 						<p>{dependency.name}</p>
