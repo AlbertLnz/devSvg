@@ -1,10 +1,14 @@
 <script lang="ts">
+	import { devDependencies } from '../data/devDependencies'
+
 	let {
 		githubTheme,
-		svgConfig
+		svgConfig,
+		selected
 	}: {
 		githubTheme: string
 		svgConfig: { bkgHexDark: string; bkgHexLight: string; displayBorder: boolean; font: string }
+		selected: (typeof devDependencies)[number][]
 	} = $props()
 
 	let bkg = $derived(() => (githubTheme === 'dark' ? svgConfig.bkgHexDark : svgConfig.bkgHexLight))
@@ -47,6 +51,32 @@
 			stroke={bkg()}
 			stroke-width={svgConfig.displayBorder ? '4' : '0'}
 		/>
+
+		{#each selected as dependency, index}
+			<g>
+				<rect
+					x={36 + (index % 5) * 80}
+					y={39 + Math.floor(index / 5) * 80}
+					width="70"
+					height="70"
+					rx="10"
+					fill="#D9D9D9"
+				/>
+				<foreignObject
+					x={36 + (index % 5) * 80}
+					y={39 + Math.floor(index / 5) * 80}
+					width="70"
+					height="70"
+				>
+					<div
+						class="flex h-full w-full flex-col items-center justify-between p-3 text-xs text-black"
+					>
+						{@html dependency.svg}
+						<p>{dependency.name}</p>
+					</div>
+				</foreignObject>
+			</g>
+		{/each}
 
 		<!-- Tab -->
 		<path
