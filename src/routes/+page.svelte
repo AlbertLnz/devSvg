@@ -5,6 +5,7 @@
 	import SvgConfiguration from '../components/SvgConfiguration.svelte'
 	import SvgProduct from '../components/SvgProduct.svelte'
 	import Swapy from '../components/Swapy.svelte'
+	import SwitcherThemeGithub from '../components/SwitcherThemeGithub.svelte'
 	import { devDependencies } from '../data/devDependencies'
 
 	let selected: (typeof devDependencies)[number]['name'][] = $state([])
@@ -13,6 +14,7 @@
 		bkgHexLight: '#2777C4',
 		font: 'Roboto'
 	})
+	let githubTheme = $state('dark')
 
 	function handleSelected(dependency: (typeof devDependencies)[number]['name']) {
 		selected = !selected.includes(dependency)
@@ -26,11 +28,12 @@
 <Header />
 
 <main
-	class="grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 bg-[#2A2D2E] p-4"
+	class={`relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 p-4 ${githubTheme === 'dark' ? 'bg-[#2A2D2E]' : 'bg-[#FFFFFF] text-black'}`}
 >
 	<Swapy {selected} />
 	<SvgProduct />
 	<SvgConfiguration bind:svgConfig />
+	<SwitcherThemeGithub bind:githubTheme />
 </main>
 
 <footer class="grid grid-cols-[0.3fr_auto]">
