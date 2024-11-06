@@ -13,6 +13,7 @@
 		cardStyle: 'Only icons',
 		bkgHexDark: '#9E66FF',
 		bkgHexLight: '#FD4932',
+		displayBorder: false,
 		font: 'Roboto'
 	})
 	let githubTheme = $state('dark')

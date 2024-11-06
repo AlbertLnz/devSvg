@@ -6,7 +6,13 @@
 		svgConfig = $bindable()
 	}: {
 		githubTheme: string
-		svgConfig: { cardStyle: string; bkgHexDark: string; bkgHexLight: string; font: string }
+		svgConfig: {
+			cardStyle: string
+			bkgHexDark: string
+			bkgHexLight: string
+			displayBorder: boolean
+			font: string
+		}
 	} = $props()
 
 	const cardOptions = ['Only icons', 'Only text', 'Icons + text']
@@ -37,6 +43,11 @@
 			type="text"
 		/>
 	</article>
+
+	<label class="flex items-center justify-between gap-x-2">
+		<p>Display border</p>
+		<input type="checkbox" bind:checked={svgConfig.displayBorder} />
+	</label>
 
 	<article>
 		<p>Font</p>
