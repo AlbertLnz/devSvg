@@ -14,7 +14,7 @@
 	let bkg = $derived(() => (githubTheme === 'dark' ? svgConfig.bkgHexDark : svgConfig.bkgHexLight))
 
 	function handleDownloadSVG() {
-		let svg = document.querySelector('svg')
+		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
 			let serializer = new XMLSerializer()
 			let source = serializer.serializeToString(svg)
@@ -29,7 +29,7 @@
 	}
 
 	function handleCopySVG() {
-		let svg = document.querySelector('svg')
+		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
 			let serializer = new XMLSerializer()
 			let source = serializer.serializeToString(svg)
@@ -39,7 +39,7 @@
 </script>
 
 <section class="flex flex-col items-center justify-center">
-	<svg xmlns="http://www.w3.org/2000/svg" width="596" height="270" fill="none">
+	<svg id="devDependenciesSvg" width="596" height="270" fill="none">
 		<!-- Rectangle -->
 		<rect
 			width="596"
@@ -54,6 +54,7 @@
 
 		{#each selected as dependency, index}
 			<g>
+				<!-- PRINCIPAL RECT -->
 				<rect
 					x={36 + (index % 5) * 80}
 					y={39 + Math.floor(index / 5) * 80}
@@ -62,17 +63,39 @@
 					rx="10"
 					fill="#D9D9D9"
 				/>
-				<foreignObject
-					x={36 + (index % 5) * 80}
-					y={39 + Math.floor(index / 5) * 80}
-					width="70"
-					height="70"
+
+				<!-- TEXT -->
+				<text
+					x={36 + (index % 5) * 80 + 35}
+					y={39 + Math.floor(index / 5) * 80 + 60}
+					text-anchor="middle"
+					font-size="10"
+					fill="black"
+					font-weight="500"
 				>
-					<div
-						class="flex h-full w-full flex-col items-center justify-between p-3 text-xs text-black"
-					>
+					{dependency.name}
+				</text>
+
+				<!-- SECONDARY RECT -->
+				<rect
+					x={36 + (index % 5) * 80 + 10}
+					y={39 + Math.floor(index / 5) * 80}
+					width="50"
+					height="45"
+					rx="5"
+					fill="transparent"
+				/>
+
+				<!-- SVG -->
+				<foreignObject
+					x={36 + (index % 5) * 80 + 10}
+					y={39 + Math.floor(index / 5) * 80}
+					width="50"
+					height="45"
+					font-size="10"
+				>
+					<div class="flex h-full items-center justify-center">
 						{@html dependency.svg}
-						<p>{dependency.name}</p>
 					</div>
 				</foreignObject>
 			</g>
