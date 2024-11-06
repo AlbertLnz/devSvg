@@ -11,7 +11,7 @@
 	let selected: (typeof devDependencies)[number]['name'][] = $state([])
 	let svgConfig = $state({
 		bkgHexDark: '#9E66FF',
-		bkgHexLight: '#2777C4',
+		bkgHexLight: '#FD4932',
 		font: 'Roboto'
 	})
 	let githubTheme = $state('dark')
@@ -22,7 +22,7 @@
 			: selected.filter((item) => item !== dependency)
 	}
 
-	$inspect(svgConfig)
+	// $inspect(svgConfig)
 </script>
 
 <Header />
@@ -31,7 +31,7 @@
 	class={`relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 p-4 ${githubTheme === 'dark' ? 'bg-[#2A2D2E]' : 'bg-[#FFFFFF] text-black'}`}
 >
 	<Swapy {selected} />
-	<SvgProduct />
+	<SvgProduct {githubTheme} {svgConfig} />
 	<SvgConfiguration bind:svgConfig />
 	<SwitcherThemeGithub bind:githubTheme />
 </main>
