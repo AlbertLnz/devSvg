@@ -87,17 +87,11 @@
 				/>
 
 				<!-- SVG -->
-				<foreignObject
-					x={36 + (index % 5) * 80 + 10}
-					y={39 + Math.floor(index / 5) * 80}
-					width="50"
-					height="45"
-					font-size="10"
+				<g
+					transform={`translate(${36 + (index % 5) * 80 + 20}, ${39 + Math.floor(index / 5) * 80 + 15})`}
 				>
-					<div class="flex h-full items-center justify-center">
-						{@html dependency.svg}
-					</div>
-				</foreignObject>
+					{@html dependency.svg}
+				</g>
 			</g>
 		{/each}
 
