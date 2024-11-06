@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { createSwapy } from 'swapy'
 	import { onMount } from 'svelte'
+	import { devDependencies } from '../data/devDependencies'
 
-	let { selected }: { selected: string[] } = $props()
+	let { selected }: { selected: (typeof devDependencies)[number][] } = $props()
 	let swapy
 
 	$effect(() => {
@@ -27,9 +28,16 @@
 	{#if selected.length > 0}
 		<div class="container flex flex-col gap-y-4 p-4">
 			{#each selected as dependency, index}
-				<div class={`section-${index + 1}`} data-swapy-slot={`${dependency}`}>
-					<div class="border-2 border-[#fff] p-4" data-swapy-item={`${index + 1}`}>
-						{dependency}
+				<div
+					class={`section-${index + 1} cursor-grab active:cursor-grabbing`}
+					data-swapy-slot={`${dependency.name}`}
+				>
+					<div
+						class="flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
+						data-swapy-item={`${index + 1}`}
+					>
+						{@html dependency.svg}
+						<p>{dependency.name}</p>
 					</div>
 				</div>
 			{/each}

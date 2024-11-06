@@ -8,7 +8,7 @@
 	import SwitcherThemeGithub from '../components/SwitcherThemeGithub.svelte'
 	import { devDependencies } from '../data/devDependencies'
 
-	let selected: (typeof devDependencies)[number]['name'][] = $state([])
+	let selected: (typeof devDependencies)[number][] = $state([])
 	let svgConfig = $state({
 		cardStyle: 'Only icons',
 		bkgHexDark: '#9E66FF',
@@ -18,13 +18,13 @@
 	})
 	let githubTheme = $state('dark')
 
-	function handleSelected(dependency: (typeof devDependencies)[number]['name']) {
-		selected = !selected.includes(dependency)
+	function handleSelected(dependency: (typeof devDependencies)[number]) {
+		selected = !selected.some((item) => item.name === dependency.name)
 			? [...selected, dependency]
-			: selected.filter((item) => item !== dependency)
+			: selected.filter((item) => item.name !== dependency.name)
 	}
 
-	$inspect(svgConfig)
+	// $inspect(selected)
 </script>
 
 <Header />
