@@ -1,7 +1,20 @@
 <script lang="ts">
+	import ArrowSwitchCard from '../assets/icons/ArrowSwitchCard.svelte'
+
 	let {
+		githubTheme,
 		svgConfig = $bindable()
-	}: { svgConfig: { bkgHexDark: String; bkgHexLight: String; font: String } } = $props()
+	}: {
+		githubTheme: string
+		svgConfig: { cardStyle: string; bkgHexDark: string; bkgHexLight: string; font: string }
+	} = $props()
+
+	const cardOptions = ['Only icons', 'Only text', 'Icons + text']
+	function handleCardStyle(direction: number) {
+		let currentIndex = cardOptions.indexOf(svgConfig.cardStyle)
+		let newIndex = (currentIndex + direction + cardOptions.length) % cardOptions.length
+		svgConfig.cardStyle = cardOptions[newIndex]
+	}
 </script>
 
 <section class="flex flex-col gap-y-4 px-8 py-4 text-sm">
@@ -30,10 +43,14 @@
 		<p>{svgConfig.font}</p>
 	</article>
 
-	<div class="flex w-full items-center justify-between rounded-full bg-red-800">
-		<button>Prev</button>
-		<p>Only icons</p>
-		<button>Post</button>
+	<div class="flex w-full items-center justify-between rounded-full">
+		<button onclick={() => handleCardStyle(+1)}>
+			<ArrowSwitchCard {githubTheme} />
+		</button>
+		<p>{svgConfig.cardStyle}</p>
+		<button class="rotate-180" onclick={() => handleCardStyle(-1)}>
+			<ArrowSwitchCard {githubTheme} />
+		</button>
 	</div>
 </section>
 

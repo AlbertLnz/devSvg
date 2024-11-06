@@ -10,6 +10,7 @@
 
 	let selected: (typeof devDependencies)[number]['name'][] = $state([])
 	let svgConfig = $state({
+		cardStyle: 'Only icons',
 		bkgHexDark: '#9E66FF',
 		bkgHexLight: '#FD4932',
 		font: 'Roboto'
@@ -22,7 +23,7 @@
 			: selected.filter((item) => item !== dependency)
 	}
 
-	// $inspect(svgConfig)
+	$inspect(svgConfig)
 </script>
 
 <Header />
@@ -32,7 +33,7 @@
 >
 	<Swapy {selected} />
 	<SvgProduct {githubTheme} {svgConfig} />
-	<SvgConfiguration bind:svgConfig />
+	<SvgConfiguration {githubTheme} bind:svgConfig />
 	<SwitcherThemeGithub bind:githubTheme />
 </main>
 
