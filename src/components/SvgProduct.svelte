@@ -8,6 +8,30 @@
 	} = $props()
 
 	let bkg = $derived(() => (githubTheme === 'dark' ? svgConfig.bkgHexDark : svgConfig.bkgHexLight))
+
+	function handleDownloadSVG() {
+		let svg = document.querySelector('svg')
+		if (svg) {
+			let serializer = new XMLSerializer()
+			let source = serializer.serializeToString(svg)
+			let blob = new Blob([source], { type: 'image/svg+xml' })
+			let url = URL.createObjectURL(blob)
+			let a = document.createElement('a')
+			a.href = url
+			a.download = 'devsvg.svg'
+			a.click()
+			URL.revokeObjectURL(url)
+		}
+	}
+
+	function handleCopySVG() {
+		let svg = document.querySelector('svg')
+		if (svg) {
+			let serializer = new XMLSerializer()
+			let source = serializer.serializeToString(svg)
+			navigator.clipboard.writeText(source)
+		}
+	}
 </script>
 
 <section class="flex flex-col items-center justify-center">
@@ -33,7 +57,7 @@
 	</svg>
 
 	<footer class="flex gap-x-6 text-sm">
-		<button>Download SVG</button>
-		<button>Copy SVG</button>
+		<button onclick={handleDownloadSVG}>Download SVG</button>
+		<button onclick={handleCopySVG}>Copy SVG</button>
 	</footer>
 </section>
