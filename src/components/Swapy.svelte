@@ -36,7 +36,7 @@
 						class="flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
 						data-swapy-item={`${dependency.name}`}
 					>
-						{@html dependency.svg}
+						<dependency.svg className="size-5" />
 						<p>{dependency.name}</p>
 					</div>
 				</div>

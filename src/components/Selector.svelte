@@ -22,7 +22,7 @@
 					onclick={() => handleSelected(dependency)}
 					class="flex items-center justify-center gap-x-2"
 				>
-					{@html dependency.svg || ''}
+					<dependency.svg className="size-4" />
 					{dependency.name}
 				</button>
 			</li>

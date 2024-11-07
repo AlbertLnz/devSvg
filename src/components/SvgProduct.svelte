@@ -90,7 +90,7 @@
 				<g
 					transform={`translate(${36 + (index % 5) * 80 + 20}, ${39 + Math.floor(index / 5) * 80 + 15})`}
 				>
-					{@html dependency.svg}
+					<dependency.svg className="size-7" />
 				</g>
 			</g>
 		{/each}
