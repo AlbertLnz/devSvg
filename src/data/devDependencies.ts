@@ -1,6 +1,6 @@
 import mistralIcon from '../data/svgs/mistral.svelte'
 import typescriptIcon from '../data/svgs/typescript.svelte'
-import seabornIcon from '../data/svgs/seaborn.svelte'
+import matplotlibIcon from './svgs/matplotlib.svelte'
 
 export const devDependencies = [
 	{
@@ -14,8 +14,8 @@ export const devDependencies = [
 		svg: typescriptIcon
 	},
 	{
-		name: 'Seaborn',
+		name: 'Matplotlib',
 		language: 'JavaScript',
-		svg: seabornIcon
+		svg: matplotlibIcon
 	}
 ]
