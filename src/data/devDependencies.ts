@@ -1,6 +1,6 @@
-import mistralIcon from '../data/svgs/mistral.svelte'
-import typescriptIcon from '../data/svgs/typescript.svelte'
-import matplotlibIcon from './svgs/matplotlib.svelte'
+import mistralIcon from '@/data/svgs/mistral.svelte'
+import typescriptIcon from '@/data/svgs/typescript.svelte'
+import matplotlibIcon from '@/data/svgs/matplotlib.svelte'
 
 export const devDependencies = [
 	{

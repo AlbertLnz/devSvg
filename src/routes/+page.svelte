@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Header from '../components/Header.svelte'
-	import SearchNav from '../components/SearchNav.svelte'
-	import Selector from '../components/Selector.svelte'
-	import SvgConfiguration from '../components/SvgConfiguration.svelte'
-	import SvgProduct from '../components/SvgProduct.svelte'
-	import Swapy from '../components/Swapy.svelte'
-	import { devDependencies } from '../data/devDependencies'
+	import Header from '@/components/Header.svelte'
+	import SearchNav from '@/components/SearchNav.svelte'
+	import Selector from '@/components/Selector.svelte'
+	import SvgConfiguration from '@/components/SvgConfiguration.svelte'
+	import SvgProduct from '@/components/SvgProduct.svelte'
+	import Swapy from '@/components/Swapy.svelte'
+	import { devDependencies } from '@/data/devDependencies'
 
 	let assignCategory = $state('Python')
 	let filteredDevDependencies = $state(

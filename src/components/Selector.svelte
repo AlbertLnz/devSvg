@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { devDependencies } from '../data/devDependencies'
+	import { devDependencies } from '@/data/devDependencies'
 
 	let {
 		filteredDevDependencies,

@@ -1,5 +1,5 @@
 <script>
-	import GitHubIcon from '../assets/icons/GitHub.svelte'
+	import GitHubIcon from '@/assets/icons/GitHub.svelte'
 </script>
 
 <header class="flex h-full items-center justify-between px-10">

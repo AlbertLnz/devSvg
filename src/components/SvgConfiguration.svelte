@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowSwitchCard from '../assets/icons/ArrowSwitchCard.svelte'
+	import ArrowSwitchCard from '@/assets/icons/ArrowSwitchCard.svelte'
 
 	let {
 		githubTheme,

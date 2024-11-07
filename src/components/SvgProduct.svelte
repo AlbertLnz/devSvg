@@ -1,8 +1,8 @@
 <script lang="ts">
-	import CopyBtnIcon from '../assets/icons/CopyBtn.svelte'
-	import DownloadBtnIcon from '../assets/icons/DownloadBtn.svelte'
-	import { devDependencies } from '../data/devDependencies'
-	import SwitcherThemeGithub from './SwitcherThemeGithub.svelte'
+	import CopyBtnIcon from '@/assets/icons/CopyBtn.svelte'
+	import DownloadBtnIcon from '@/assets/icons/DownloadBtn.svelte'
+	import { devDependencies } from '@/data/devDependencies'
+	import SwitcherThemeGithub from '@/components/SwitcherThemeGithub.svelte'
 
 	let {
 		githubTheme = $bindable(),

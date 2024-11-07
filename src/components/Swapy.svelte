@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { createSwapy, type Swapy } from 'swapy'
 	import { onMount } from 'svelte'
-	import { devDependencies } from '../data/devDependencies'
-	import Cross from '../assets/icons/Cross.svelte'
+	import { devDependencies } from '@/data/devDependencies'
+	import Cross from '@/assets/icons/Cross.svelte'
 
 	let {
 		selected,

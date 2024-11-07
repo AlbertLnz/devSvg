@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GitHubIcon from '../assets/icons/GitHub.svelte'
+	import GitHubIcon from '@/assets/icons/GitHub.svelte'
 
 	let { githubTheme = $bindable() } = $props()
 
