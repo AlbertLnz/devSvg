@@ -4,10 +4,12 @@
 	let {
 		children,
 		githubTheme,
+		tabText,
 		svgConfig
 	}: {
 		children: Snippet
 		githubTheme: string
+		tabText: string
 		svgConfig: {
 			cardStyle: string
 			bkgHexDark: string
@@ -42,4 +44,24 @@
 	/>
 
 	{@render children()}
+
+	<!-- Tab -->
+	<path
+		fill={bkg()}
+		fill-opacity=".6"
+		d="M16 10c0-5.523 4.477-10 10-10h368c5.523 0 10 4.477 10 10v12H16V10Z"
+	/>
+
+	<!-- Tab text -->
+	<text
+		x="4%"
+		y="16"
+		text-anchor="start"
+		font-size="11"
+		fill="white"
+		font-weight="500"
+		font-family={svgConfig.font}
+	>
+		{tabText}
+	</text>
 </svg>

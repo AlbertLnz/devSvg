@@ -26,8 +26,6 @@
 
 	let tabText = $state('🌟 DevSVG. Content editable, click to edit!')
 
-	let bkg = $derived(() => (githubTheme === 'dark' ? svgConfig.bkgHexDark : svgConfig.bkgHexLight))
-
 	function handleDownloadSVG() {
 		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
@@ -55,7 +53,7 @@
 
 <section class="flex flex-col items-center justify-center">
 	<article id="svg-container" class="relative">
-		<SvgLayout {githubTheme} {svgConfig}>
+		<SvgLayout {githubTheme} {svgConfig} {tabText}>
 			{#each selected as dependency, index}
 				{#if svgConfig.cardStyle === 'Icon + Text'}
 					<IconText {dependency} {index} {svgConfig} />
