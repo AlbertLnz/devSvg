@@ -20,6 +20,8 @@
 		selected: (typeof devDependencies)[number][]
 	} = $props()
 
+	let tabText = $state('🌟 DevSVG. Content editable, click to edit!')
+
 	let bkg = $derived(() => (githubTheme === 'dark' ? svgConfig.bkgHexDark : svgConfig.bkgHexLight))
 
 	function handleDownloadSVG() {
@@ -67,7 +69,7 @@
 				fill-opacity="1"
 				rx="8"
 				stroke={bkg()}
-				stroke-width={svgConfig.displayBorder ? '4' : '0'}
+				stroke-width={svgConfig.displayBorder ? '2' : '0'}
 			/>
 
 			{#each selected as dependency, index}
@@ -152,7 +154,28 @@
 				fill-opacity=".6"
 				d="M16 10c0-5.523 4.477-10 10-10h368c5.523 0 10 4.477 10 10v12H16V10Z"
 			/>
+
+			<!-- Tab text -->
+			<text
+				x="4%"
+				y="16"
+				text-anchor="start"
+				font-size="11"
+				fill="white"
+				font-weight="500"
+				font-family={svgConfig.font}
+			>
+				{tabText}
+			</text>
 		</svg>
+
+		<input
+			type="text"
+			class="absolute left-6 top-1 w-[63%] overflow-x-hidden bg-transparent font-mono text-[11px] opacity-0 focus:text-transparent focus:caret-white focus:opacity-100 focus:outline-none"
+			maxlength={56}
+			bind:value={tabText}
+		/>
+
 		<div class="absolute right-0 top-0 flex gap-x-2 pr-1 text-sm">
 			<button onclick={handleDownloadSVG} class="px-1"
 				><DownloadBtnIcon
