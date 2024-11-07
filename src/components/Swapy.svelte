@@ -2,6 +2,7 @@
 	import { createSwapy, type Swapy } from 'swapy'
 	import { onMount } from 'svelte'
 	import { devDependencies } from '../data/devDependencies'
+	import Cross from '../assets/icons/Cross.svelte'
 
 	let {
 		selected,
@@ -40,14 +41,14 @@
 					data-swapy-slot={`${dependency.name}`}
 				>
 					<div
-						class="relative flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
+						class="relative flex items-center justify-start gap-x-3 rounded-md border border-[#fff] p-4 hover:bg-white/10"
 						data-swapy-item={`${dependency.name}`}
 					>
 						<dependency.svg className="size-5" />
 						<p>{dependency.name}</p>
 						<div class="absolute right-3 top-0 flex h-full items-center justify-center">
-							<button class="bg-red-800 px-2 py-0.5" onclick={() => handleSelected(dependency)}
-								>X</button
+							<button class="px-2 py-0.5" onclick={() => handleSelected(dependency)}
+								><Cross className="size-5 text-red-400 hover:text-red-500" /></button
 							>
 						</div>
 					</div>
@@ -55,7 +56,10 @@
 			{/each}
 		</div>
 	{:else}
-		<p>Add some devDependency!</p>
+		<p class="flex h-full flex-col items-center justify-center text-2xl font-bold">
+			<span>Add some dev</span>
+			<span>dependency</span>
+		</p>
 	{/if}
 </section>
 

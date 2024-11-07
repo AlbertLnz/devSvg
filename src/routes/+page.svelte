@@ -5,7 +5,6 @@
 	import SvgConfiguration from '../components/SvgConfiguration.svelte'
 	import SvgProduct from '../components/SvgProduct.svelte'
 	import Swapy from '../components/Swapy.svelte'
-	import SwitcherThemeGithub from '../components/SwitcherThemeGithub.svelte'
 	import { devDependencies } from '../data/devDependencies'
 
 	let assignCategory = $state('Python')
@@ -15,10 +14,10 @@
 	let selected: (typeof devDependencies)[number][] = $state([])
 	let svgConfig = $state({
 		cardStyle: 'Icon + Text',
-		bkgHexDark: '#9E66FF',
+		bkgHexDark: '#FFD9718D',
 		bkgHexLight: '#FD4932',
 		displayBorder: false,
-		font: 'Roboto'
+		font: 'monospace'
 	})
 	let githubTheme = $state('dark')
 
@@ -33,21 +32,20 @@
 		filteredDevDependencies = devDependencies.filter((item) => item.language === category)
 	}
 
-	// $inspect(assignCategory)
+	// $inspect(githubTheme)
 </script>
 
 <Header />
 
 <main
-	class={`relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 p-4 ${githubTheme === 'dark' ? 'bg-[#2A2D2E]' : 'bg-[#FFFFFF] text-black'}`}
+	class={`relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-t-4 border-t-[#9E66FF]/40 p-4 ${githubTheme === 'dark' ? 'bg-[#2A2D2E]' : 'bg-[#FFFFFF] text-black'}`}
 >
 	<Swapy {selected} {handleSelected} />
-	<SvgProduct {githubTheme} {svgConfig} {selected} />
+	<SvgProduct bind:githubTheme {svgConfig} {selected} />
 	<SvgConfiguration {githubTheme} bind:svgConfig />
-	<SwitcherThemeGithub bind:githubTheme />
 </main>
 
-<footer class="grid grid-cols-[25%_75%]">
+<footer class="w-full">
 	<SearchNav {assignCategory} {handleAssignCategory} />
 	<Selector {filteredDevDependencies} {selected} {handleSelected} />
 </footer>

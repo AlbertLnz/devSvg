@@ -1,11 +1,11 @@
 <script lang="ts">
-	let { className, hexColor }: { className: string; hexColor: string } = $props()
+	let { className }: { className: string } = $props()
 </script>
 
 <svg
 	class={className}
 	viewBox="0 0 256 250"
-	fill={hexColor}
+	fill="currentColor"
 	xmlns="http://www.w3.org/2000/svg"
 	preserveAspectRatio="xMidYMid"
 >
