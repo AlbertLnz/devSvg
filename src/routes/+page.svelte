@@ -8,6 +8,10 @@
 	import SwitcherThemeGithub from '../components/SwitcherThemeGithub.svelte'
 	import { devDependencies } from '../data/devDependencies'
 
+	let assignCategory = $state('Python')
+	let filteredDevDependencies = $state(
+		devDependencies.filter((item) => item.language === assignCategory)
+	)
 	let selected: (typeof devDependencies)[number][] = $state([])
 	let svgConfig = $state({
 		cardStyle: 'Only icons',
@@ -24,7 +28,12 @@
 			: selected.filter((item) => item.name !== dependency.name)
 	}
 
-	// $inspect(selected)
+	function handleAssignCategory(category: string) {
+		assignCategory = category
+		filteredDevDependencies = devDependencies.filter((item) => item.language === category)
+	}
+
+	// $inspect(assignCategory)
 </script>
 
 <Header />
@@ -38,7 +47,7 @@
 	<SwitcherThemeGithub bind:githubTheme />
 </main>
 
-<footer class="grid grid-cols-[0.3fr_auto]">
-	<SearchNav />
-	<Selector {selected} {handleSelected} />
+<footer class="grid grid-cols-[25%_75%]">
+	<SearchNav {assignCategory} {handleAssignCategory} />
+	<Selector {filteredDevDependencies} {selected} {handleSelected} />
 </footer>

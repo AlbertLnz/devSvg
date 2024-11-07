@@ -2,9 +2,11 @@
 	import { devDependencies } from '../data/devDependencies'
 
 	let {
+		filteredDevDependencies,
 		selected,
 		handleSelected
 	}: {
+		filteredDevDependencies: (typeof devDependencies)[number][]
 		selected: (typeof devDependencies)[number][]
 		handleSelected: (dependency: (typeof devDependencies)[number]) => void
 	} = $props()
@@ -14,7 +16,7 @@
 
 <section>
 	<ul class="flex gap-x-2 p-4">
-		{#each devDependencies as dependency}
+		{#each filteredDevDependencies as dependency}
 			<li
 				class={`rounded-full border border-dashed border-white px-4 py-1 ${selected.some((item) => item.name === dependency.name) ? 'border-[#BEB2D4] text-[#BEB2D4]' : 'border-white'}`}
 			>
