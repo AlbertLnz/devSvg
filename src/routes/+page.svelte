@@ -14,7 +14,7 @@
 	)
 	let selected: (typeof devDependencies)[number][] = $state([])
 	let svgConfig = $state({
-		cardStyle: 'Only icons',
+		cardStyle: 'Icon + Text',
 		bkgHexDark: '#9E66FF',
 		bkgHexLight: '#FD4932',
 		displayBorder: false,

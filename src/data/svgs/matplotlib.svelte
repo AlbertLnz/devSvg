@@ -1,8 +1,12 @@
 <script lang="ts">
-	let { className }: { className: string } = $props()
+	let {
+		className,
+		width = 30,
+		height = 30
+	}: { className?: string; width?: number; height?: number } = $props()
 </script>
 
-<svg class={className} width="30" height="30" viewBox="0 0 180 180" stroke="gray">
+<svg class={className} {width} {height} viewBox="0 0 180 180" stroke="gray">
 	<g fill="#FFF" stroke-width="2">
 		<circle cx="90" cy="90" r="88" />
 		<circle cx="90" cy="90" r="66" />

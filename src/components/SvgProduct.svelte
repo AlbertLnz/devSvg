@@ -7,7 +7,13 @@
 		selected
 	}: {
 		githubTheme: string
-		svgConfig: { bkgHexDark: string; bkgHexLight: string; displayBorder: boolean; font: string }
+		svgConfig: {
+			cardStyle: string
+			bkgHexDark: string
+			bkgHexLight: string
+			displayBorder: boolean
+			font: string
+		}
 		selected: (typeof devDependencies)[number][]
 	} = $props()
 
@@ -53,46 +59,77 @@
 		/>
 
 		{#each selected as dependency, index}
-			<g>
-				<!-- PRINCIPAL RECT -->
-				<rect
-					x={36 + (index % 5) * 80}
-					y={39 + Math.floor(index / 5) * 80}
-					width="70"
-					height="70"
-					rx="10"
-					fill="#D9D9D9"
-				/>
+			{#if svgConfig.cardStyle === 'Icon + Text'}
+				<g>
+					<!-- PRINCIPAL RECT -->
+					<rect
+						x={36 + (index % 5) * 80}
+						y={39 + Math.floor(index / 5) * 80}
+						width="70"
+						height="70"
+						rx="10"
+						fill="#D9D9D9"
+					/>
 
-				<!-- TEXT -->
-				<text
-					x={36 + (index % 5) * 80 + 35}
-					y={39 + Math.floor(index / 5) * 80 + 60}
-					text-anchor="middle"
-					font-size="10"
-					fill="black"
-					font-weight="500"
-				>
-					{dependency.name}
-				</text>
+					<!-- TEXT -->
+					<text
+						x={36 + (index % 5) * 80 + 35}
+						y={39 + Math.floor(index / 5) * 80 + 60}
+						text-anchor="middle"
+						font-size="10"
+						fill="black"
+						font-weight="500"
+					>
+						{dependency.name}
+					</text>
 
-				<!-- SECONDARY RECT -->
-				<rect
-					x={36 + (index % 5) * 80 + 10}
-					y={39 + Math.floor(index / 5) * 80}
-					width="50"
-					height="45"
-					rx="5"
-					fill="transparent"
-				/>
+					<!-- SECONDARY RECT -->
+					<rect
+						x={36 + (index % 5) * 80 + 10}
+						y={39 + Math.floor(index / 5) * 80}
+						width="50"
+						height="45"
+						rx="5"
+						fill="transparent"
+					/>
 
-				<!-- SVG -->
-				<g
-					transform={`translate(${36 + (index % 5) * 80 + 20}, ${39 + Math.floor(index / 5) * 80 + 15})`}
-				>
-					<dependency.svg className="size-7" />
+					<!-- SVG -->
+					<g
+						transform={`translate(${36 + (index % 5) * 80 + 20}, ${39 + Math.floor(index / 5) * 80 + 15})`}
+					>
+						<dependency.svg className="size-7" />
+					</g>
 				</g>
-			</g>
+			{:else if svgConfig.cardStyle === 'Only Icon'}
+				<!-- SVG -->
+				<g transform={`translate(${36 + (index % 5) * 80}, ${39 + Math.floor(index / 5) * 80})`}>
+					<dependency.svg width={70} height={70} />
+				</g>
+			{:else if svgConfig.cardStyle === 'Only Text'}
+				<g>
+					<!-- RECT -->
+					<rect
+						x={36 + (index % 5) * 65 + 10}
+						y={39 + Math.floor(index / 5) * 65}
+						width="50"
+						height="30"
+						rx="5"
+						fill="white"
+					/>
+
+					<!-- TEXT -->
+					<text
+						x={36 + (index % 5) * 65 + 35}
+						y={39 + Math.floor(index / 5) * 65 + 20}
+						text-anchor="middle"
+						font-size="10"
+						fill="black"
+						font-weight="500"
+					>
+						{dependency.name}
+					</text>
+				</g>
+			{/if}
 		{/each}
 
 		<!-- Tab -->

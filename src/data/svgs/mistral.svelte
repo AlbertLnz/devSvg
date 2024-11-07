@@ -1,8 +1,12 @@
 <script lang="ts">
-	let { className }: { className: string } = $props()
+	let {
+		className,
+		width = 30,
+		height = 30
+	}: { className?: string; width?: number; height?: number } = $props()
 </script>
 
-<svg class={className} height="30" width="30" viewBox="0 0 35 32" fill="none">
+<svg class={className} {width} {height} viewBox="0 0 35 32" fill="none">
 	<g clip-path="url(#a)">
 		<path fill="#000" d="M25.455 0h6.363v6.364h-6.363V0Z" />
 		<path fill="#F7D046" d="M28.636 0H35v6.364h-6.364V0Z" />

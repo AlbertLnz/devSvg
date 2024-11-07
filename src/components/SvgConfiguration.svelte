@@ -15,7 +15,7 @@
 		}
 	} = $props()
 
-	const cardOptions = ['Only icons', 'Only text', 'Icons + text']
+	const cardOptions = ['Icon + Text', 'Only Text', 'Only Icon']
 	function handleCardStyle(direction: number) {
 		let currentIndex = cardOptions.indexOf(svgConfig.cardStyle)
 		let newIndex = (currentIndex + direction + cardOptions.length) % cardOptions.length
