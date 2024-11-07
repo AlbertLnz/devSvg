@@ -32,7 +32,7 @@
 <main
 	class={`relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/40 p-4 ${githubTheme === 'dark' ? 'bg-[#2A2D2E]' : 'bg-[#FFFFFF] text-black'}`}
 >
-	<Swapy {selected} />
+	<Swapy {selected} {handleSelected} />
 	<SvgProduct {githubTheme} {svgConfig} {selected} />
 	<SvgConfiguration {githubTheme} bind:svgConfig />
 	<SwitcherThemeGithub bind:githubTheme />

@@ -3,7 +3,14 @@
 	import { onMount } from 'svelte'
 	import { devDependencies } from '../data/devDependencies'
 
-	let { selected }: { selected: (typeof devDependencies)[number][] } = $props()
+	let {
+		selected,
+		handleSelected
+	}: {
+		selected: (typeof devDependencies)[number][]
+		handleSelected: (dependency: (typeof devDependencies)[number]) => void
+	} = $props()
+
 	let swapy: Swapy
 
 	$effect(() => {
@@ -33,11 +40,16 @@
 					data-swapy-slot={`${dependency.name}`}
 				>
 					<div
-						class="flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
+						class="relative flex items-center justify-start gap-x-3 border-2 border-[#fff] p-4"
 						data-swapy-item={`${dependency.name}`}
 					>
 						<dependency.svg className="size-5" />
 						<p>{dependency.name}</p>
+						<div class="absolute right-3 top-0 flex h-full items-center justify-center">
+							<button class="bg-red-800 px-2 py-0.5" onclick={() => handleSelected(dependency)}
+								>X</button
+							>
+						</div>
 					</div>
 				</div>
 			{/each}
