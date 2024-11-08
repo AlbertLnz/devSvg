@@ -74,16 +74,11 @@
 
 		<div class="absolute right-0 top-0 flex gap-x-2 pr-1 text-sm">
 			<button onclick={handleDownloadSVG} class="px-1"
-				><DownloadBtnIcon
-					className={`size-4 ${githubTheme === 'light' ? 'text-black' : 'text-white'}`}
-				/></button
-			>
+				><DownloadBtnIcon className="size-4 text-black dark:text-white" />
+			</button>
 			<button onclick={handleCopySVG} class="px-1"
-				><CopyBtnIcon
-					className={`size-4 ${githubTheme === 'light' ? 'text-black' : 'text-white'}`}
-				/></button
-			>
-
+				><CopyBtnIcon className="size-4 text-black dark:text-white" />
+			</button>
 			<SwitcherThemeGithub bind:githubTheme />
 		</div>
 	</article>

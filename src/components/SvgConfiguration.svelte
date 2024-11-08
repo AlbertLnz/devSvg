@@ -2,10 +2,8 @@
 	import ArrowSwitchCard from '@/assets/icons/ArrowSwitchCard.svelte'
 
 	let {
-		githubTheme,
 		svgConfig = $bindable()
 	}: {
-		githubTheme: string
 		svgConfig: {
 			cardStyle: string
 			bkgHexDark: string
@@ -56,11 +54,11 @@
 
 	<div class="flex w-full items-center justify-between rounded-full border border-[#fff] p-2">
 		<button class="p-1" onclick={() => handleCardStyle(+1)}>
-			<ArrowSwitchCard {githubTheme} />
+			<ArrowSwitchCard />
 		</button>
 		<p class="font-medium italic">{svgConfig.cardStyle}</p>
 		<button class="rotate-180 p-1" onclick={() => handleCardStyle(-1)}>
-			<ArrowSwitchCard {githubTheme} />
+			<ArrowSwitchCard />
 		</button>
 	</div>
 </section>
