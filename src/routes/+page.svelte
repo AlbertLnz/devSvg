@@ -15,7 +15,7 @@
 	let svgConfig = $state({
 		cardStyle: 'Icon + Text',
 		bkgHexDark: '#FFD9718D',
-		bkgHexLight: '#FD4932',
+		bkgHexLight: '#F2CA55',
 		displayBorder: false,
 		font: 'monospace'
 	})

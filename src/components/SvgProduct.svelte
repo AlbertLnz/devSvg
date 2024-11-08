@@ -53,7 +53,7 @@
 
 <section class="flex flex-col items-center justify-center">
 	<article id="svg-container" class="relative">
-		<SvgLayout {githubTheme} {svgConfig} {tabText}>
+		<SvgLayout {svgConfig} {tabText}>
 			{#each selected as dependency, index}
 				{#if svgConfig.cardStyle === 'Icon + Text'}
 					<IconText {dependency} {index} {svgConfig} />
