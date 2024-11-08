@@ -27,15 +27,6 @@
 >
 	<!-- Theme Media Query -->
 	<style>
-		#tabTxt {
-			fill: black;
-		}
-		#mainRect,
-		#tabPath {
-			fill: var(--bkg-light);
-			stroke: var(--bkg-light);
-		}
-
 		@media (prefers-color-scheme: dark) {
 			#tabTxt {
 				fill: white;
@@ -45,6 +36,25 @@
 				fill: var(--bkg-dark);
 				stroke: var(--bkg-dark);
 			}
+		}
+
+		body.dark #tabTxt {
+			fill: white;
+		}
+
+		body.dark #mainRect,
+		body.dark #tabPath {
+			fill: var(--bkg-dark);
+			stroke: var(--bkg-dark);
+		}
+
+		#tabTxt {
+			fill: black;
+		}
+		#mainRect,
+		#tabPath {
+			fill: var(--bkg-light);
+			stroke: var(--bkg-light);
 		}
 	</style>
 
