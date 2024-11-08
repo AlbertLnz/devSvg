@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ViewTransition from '@/routes/navigation.svelte'
 	import '@/app.css'
 	import { onMount } from 'svelte'
 	let { children } = $props()
@@ -12,4 +13,5 @@
 	})
 </script>
 
+<ViewTransition />
 {@render children()}
