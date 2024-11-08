@@ -21,7 +21,7 @@
 	// $inspect(techsGridCols)
 </script>
 
-<nav class={`relative grid w-full grid-cols-11 px-8`}>
+<nav class="relative grid w-full grid-cols-11 px-8 pt-1">
 	{#each techs as tech, index}
 		<button
 			onclick={() => handleAssignCategory(tech)}

@@ -13,5 +13,5 @@
 </script>
 
 <button class="px-1" onclick={toggleTheme}>
-	<GitHubIcon className={`size-4 ${githubTheme === 'light' ? 'text-black' : 'text-white'}`} />
+	<GitHubIcon className="size-4 text-black dark:text-white" />
 </button>
