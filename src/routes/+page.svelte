@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '@/components/Header.svelte'
 	import SearchNav from '@/components/SearchNav.svelte'
 	import Selector from '@/components/Selector.svelte'
 	import SvgConfiguration from '@/components/SvgConfiguration.svelte'
@@ -33,8 +32,6 @@
 
 	// $inspect(svgConfig)
 </script>
-
-<Header />
 
 <main
 	class="relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-y-4 border-y-[#9E66FF]/90 bg-[#FFFFFF] p-4 text-black dark:border-y-[#9E66FF]/40 dark:bg-[#2A2D2E] dark:text-white"
