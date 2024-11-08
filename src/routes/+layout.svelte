@@ -1,8 +1,9 @@
 <script lang="ts">
 	import '@/app.css'
+	import { onMount } from 'svelte'
 	let { children } = $props()
 
-	$effect(() => {
+	onMount(() => {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			document.body.classList.add('dark')
 		} else {
