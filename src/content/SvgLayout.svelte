@@ -26,16 +26,14 @@
 	style="--bkg-light: {svgConfig.bkgHexLight}; --bkg-dark: {svgConfig.bkgHexDark}"
 >
 	<!-- Theme Media Query -->
-	<style>
-		@media (prefers-color-scheme: dark) {
-			#tabTxt {
-				fill: white;
-			}
-			#mainRect,
-			#tabPath {
-				fill: var(--bkg-dark);
-				stroke: var(--bkg-dark);
-			}
+	<style id="developmentStyles">
+		#tabTxt {
+			fill: black;
+		}
+		#mainRect,
+		#tabPath {
+			fill: var(--bkg-light);
+			stroke: var(--bkg-light);
 		}
 
 		body.dark #tabTxt {
@@ -46,15 +44,6 @@
 		body.dark #tabPath {
 			fill: var(--bkg-dark);
 			stroke: var(--bkg-dark);
-		}
-
-		#tabTxt {
-			fill: black;
-		}
-		#mainRect,
-		#tabPath {
-			fill: var(--bkg-light);
-			stroke: var(--bkg-light);
 		}
 	</style>
 

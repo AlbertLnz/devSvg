@@ -27,6 +27,35 @@
 	function handleDownloadSVG() {
 		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
+			let devStyle = svg.querySelector('#developmentStyles')
+			if (devStyle) devStyle.remove()
+
+			let productionStyles = `
+				<style id="productionStyles">
+					#tabTxt {
+						fill: black;
+					}
+					#mainRect,
+					#tabPath {
+						fill: var(--bkg-light);
+						stroke: var(--bkg-light);
+					}
+
+					@media (prefers-color-scheme: dark) {
+						#tabTxt {
+							fill: white;
+						}
+						#mainRect,
+						#tabPath {
+							fill: var(--bkg-dark);
+							stroke: var(--bkg-dark);
+						}
+					}
+				</style>
+			`
+
+			svg.insertAdjacentHTML('beforeend', productionStyles)
+
 			let serializer = new XMLSerializer()
 			let source = serializer.serializeToString(svg)
 			let blob = new Blob([source], { type: 'image/svg+xml' })
