@@ -1,7 +1,7 @@
 <script lang="ts">
 	import GitHubIcon from '@/assets/icons/GitHub.svelte'
 
-	let { githubTheme = $bindable() }: { githubTheme: string } = $props()
+	let githubTheme = $state('dark')
 
 	function toggleTheme() {
 		githubTheme = githubTheme === 'light' ? 'dark' : 'light'

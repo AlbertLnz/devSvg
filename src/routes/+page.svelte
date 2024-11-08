@@ -19,7 +19,6 @@
 		displayBorder: false,
 		font: 'monospace'
 	})
-	let githubTheme = $state('dark')
 
 	function handleSelected(dependency: (typeof devDependencies)[number]) {
 		selected = !selected.some((item) => item.name === dependency.name)
@@ -32,7 +31,7 @@
 		filteredDevDependencies = devDependencies.filter((item) => item.language === category)
 	}
 
-	// $inspect(githubTheme)
+	// $inspect(svgConfig)
 </script>
 
 <Header />
@@ -41,7 +40,7 @@
 	class="relative grid grid-cols-[0.2fr_0.6fr_0.2fr] overflow-y-hidden border-t-4 border-t-[#9E66FF]/40 bg-[#FFFFFF] p-4 text-black dark:bg-[#2A2D2E] dark:text-white"
 >
 	<Swapy {selected} {handleSelected} />
-	<SvgProduct bind:githubTheme {svgConfig} {selected} />
+	<SvgProduct {svgConfig} {selected} />
 	<SvgConfiguration bind:svgConfig />
 </main>
 

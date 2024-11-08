@@ -9,11 +9,9 @@
 	import OnlyText from '@/content/OnlyText.svelte'
 
 	let {
-		githubTheme = $bindable(),
 		svgConfig,
 		selected
 	}: {
-		githubTheme: string
 		svgConfig: {
 			cardStyle: string
 			bkgHexDark: string
@@ -79,7 +77,7 @@
 			<button onclick={handleCopySVG} class="px-1"
 				><CopyBtnIcon className="size-4 text-black dark:text-white" />
 			</button>
-			<SwitcherThemeGithub bind:githubTheme />
+			<SwitcherThemeGithub />
 		</div>
 	</article>
 </section>
