@@ -52,7 +52,9 @@
 		<p class="text-xs">{svgConfig.font}</p>
 	</article>
 
-	<div class="flex w-full items-center justify-between rounded-full border border-[#fff] p-2">
+	<div
+		class="flex w-full items-center justify-between rounded-full border border-[#000] p-2 dark:border-[#fff]"
+	>
 		<button class="p-1" onclick={() => handleCardStyle(+1)}>
 			<ArrowSwitchCard />
 		</button>

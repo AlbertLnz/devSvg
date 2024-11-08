@@ -41,7 +41,7 @@
 					data-swapy-slot={`${dependency.name}`}
 				>
 					<div
-						class="relative flex items-center justify-start gap-x-3 rounded-md border border-[#fff] p-4 hover:bg-white/10"
+						class="relative flex items-center justify-start gap-x-3 rounded-md border border-[#000] p-4 hover:bg-white/10 dark:border-[#fff]"
 						data-swapy-item={`${dependency.name}`}
 					>
 						<dependency.svg className="size-5" />
