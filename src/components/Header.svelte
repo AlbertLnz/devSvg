@@ -10,7 +10,9 @@
 		<a href="/help">
 			<h4 class="text-lg">How it works</h4>
 		</a>
-		<h4 class="text-lg">Support</h4>
+		<a href="/support">
+			<h4 class="text-lg">Support</h4>
+		</a>
 		<a href="https://github.com/albertlnz/devSvg" target="_blank">
 			<GitHubIcon className="size-8" />
 		</a>
