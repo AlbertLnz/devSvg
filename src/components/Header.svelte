@@ -1,8 +1,11 @@
 <script>
+	import Toasts from '@/components/Toasts.svelte'
 	import GitHubIcon from '@/assets/icons/GitHub.svelte'
 </script>
 
 <header class="flex h-full items-center justify-between px-10">
+	<Toasts />
+
 	<a href="/">
 		<h1 class="text-3xl font-bold">DevSVG</h1>
 	</a>

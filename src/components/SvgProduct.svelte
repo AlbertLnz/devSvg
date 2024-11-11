@@ -7,6 +7,7 @@
 	import IconText from '@/content/IconText.svelte'
 	import OnlyIcon from '@/content/OnlyIcon.svelte'
 	import OnlyText from '@/content/OnlyText.svelte'
+	import { addToast } from '@/data/store'
 
 	let {
 		svgConfig,
@@ -22,9 +23,18 @@
 		selected: (typeof devDependencies)[number][]
 	} = $props()
 
+	const id = Math.floor(Math.random() * 10000)
 	let tabText = $state('🌟 DevSVG. Content editable, click to edit!')
 
 	function handleDownloadSVG() {
+		addToast({
+			id,
+			message: 'Svg downloaded!',
+			type: 'success',
+			dismissible: true,
+			timeout: 2000
+		})
+
 		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
 			let devStyle = svg.querySelector('#developmentStyles')
@@ -69,6 +79,14 @@
 	}
 
 	function handleCopySVG() {
+		addToast({
+			id,
+			message: 'Svg copied!',
+			type: 'success',
+			dismissible: true,
+			timeout: 1500
+		})
+
 		let svg = document.getElementById('devDependenciesSvg')
 		if (svg) {
 			let serializer = new XMLSerializer()
