@@ -2,7 +2,7 @@
 	let {
 		assignCategory,
 		handleAssignCategory
-	}: { assignCategory: string; handleAssignCategory: (category: string) => void } = $props()
+	}: { assignCategory: string[]; handleAssignCategory: (categories: string[]) => void } = $props()
 
 	const techs = [
 		'Python',
@@ -22,11 +22,11 @@
 </script>
 
 <nav class="relative grid w-full grid-cols-11 px-8 pt-1">
-	{#each techs as tech, index}
+	{#each techs as tech}
 		<button
-			onclick={() => handleAssignCategory(tech)}
+			onclick={() => handleAssignCategory([tech])}
 			class={`z-10 h-full w-full bg-[#2A2D2E] py-1 hover:bg-opacity-50 ${
-				assignCategory === tech ? 'bg-opacity-50' : ''
+				assignCategory.includes(tech) ? 'bg-opacity-50' : ''
 			}`}
 		>
 			{tech}
@@ -37,9 +37,3 @@
 		class="absolute bottom-0 left-1/2 h-px w-[calc(100%-4rem)] -translate-x-1/2 transform bg-white"
 	></div>
 </nav>
-
-<style>
-	nav {
-		scrollbar-width: none;
-	}
-</style>

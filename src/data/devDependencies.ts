@@ -30,142 +30,142 @@ import CloudinaryIcon from './svgs/javascript/cloudinary.svelte'
 export const devDependencies = [
 	{
 		name: 'Mistral',
-		language: 'Python',
+		language: ['Python'],
 		svg: mistralIcon
 	},
 	{
 		name: 'TypeScript',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: typescriptIcon
 	},
 	{
 		name: 'Matplotlib',
-		language: 'Python',
+		language: ['Python'],
 		svg: matplotlibIcon
 	},
 	{
 		name: 'Numpy',
-		language: 'Python',
+		language: ['Python'],
 		svg: numpyIcon
 	},
 	{
 		name: 'PyTorch',
-		language: 'Python',
+		language: ['Python'],
 		svg: pytorchIcon
 	},
 	{
 		name: 'Scipy',
-		language: 'Python',
+		language: ['Python'],
 		svg: ScipyIcon
 	},
 	{
 		name: 'Keras',
-		language: 'Python',
+		language: ['Python'],
 		svg: KerasIcon
 	},
 	{
 		name: 'Tensorflow',
-		language: 'Python',
+		language: ['Python'],
 		svg: TensorIcon
 	},
 	{
 		name: 'Hugging Face',
-		language: 'Python',
+		language: ['Python'],
 		svg: HuggingFaceIcon
 	},
 	{
 		name: 'Scrapy',
-		language: 'Python',
+		language: ['Python'],
 		svg: ScrapyIcon
 	},
 	{
 		name: 'OpenCV',
-		language: 'Python',
+		language: ['Python'],
 		svg: OpenCVIcon
 	},
 	{
 		name: 'Pandas',
-		language: 'Python',
+		language: ['Python'],
 		svg: PandasIcon
 	},
 	{
 		name: 'Taipy',
-		language: 'Python',
+		language: ['Python'],
 		svg: TaipyIcon
 	},
 	{
 		name: 'Theano',
-		language: 'Python',
+		language: ['Python'],
 		svg: TheanoIcon
 	},
 	{
 		name: 'PySpark',
-		language: 'Python',
+		language: ['Python'],
 		svg: PySparkIcon
 	},
 	{
 		name: 'Polars',
-		language: 'Python',
+		language: ['Python'],
 		svg: PolarsIcon
 	},
 	{
 		name: 'Folium',
-		language: 'Python',
+		language: ['Python'],
 		svg: FoliumIcon
 	},
 	{
 		name: 'Bokeh',
-		language: 'Python',
+		language: ['Python'],
 		svg: BokehIcon
 	},
 	{
 		name: 'Vizzu',
-		language: 'Python',
+		language: ['Python'],
 		svg: VizzuIcon
 	},
 	{
 		name: 'Mapbox',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: MapboxIcon
 	},
 	{
 		name: 'Zod',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: ZodIcon
 	},
 	{
 		name: 'TailwindCSS',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: TailwindCSSIcon
 	},
 	{
 		name: 'Vitest',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: VitestIcon
 	},
 	{
 		name: 'Console Ninja',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: ConsoleNinjaIcon
 	},
 	{
 		name: 'ESLint',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: ESLintIcon
 	},
 	{
 		name: 'GraphQL',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: GraphQLIcon
 	},
 	{
 		name: 'Nodemon',
-		language: 'JavaScript',
+		language: ['JavaScript'],
 		svg: NodemonIcon
 	},
 	{
 		name: 'Cloudinary',
-		language: 'JavaScript',
+		language: ['JavaScript', 'PHP'],
 		svg: CloudinaryIcon
 	}
 ]

@@ -6,9 +6,9 @@
 	import Swapy from '@/components/Swapy.svelte'
 	import { devDependencies } from '@/data/devDependencies'
 
-	let assignCategory = $state('Python')
+	let assignCategory = $state(['Python'])
 	let filteredDevDependencies = $state(
-		devDependencies.filter((item) => item.language === assignCategory)
+		devDependencies.filter((item) => item.language.some((lang) => assignCategory.includes(lang)))
 	)
 	let selected: (typeof devDependencies)[number][] = $state([])
 	let svgConfig = $state({
@@ -25,9 +25,11 @@
 			: selected.filter((item) => item.name !== dependency.name)
 	}
 
-	function handleAssignCategory(category: string) {
-		assignCategory = category
-		filteredDevDependencies = devDependencies.filter((item) => item.language === category)
+	function handleAssignCategory(categories: string[]) {
+		assignCategory = categories
+		filteredDevDependencies = devDependencies.filter((item) =>
+			item.language.some((lang) => categories.includes(lang))
+		)
 	}
 
 	// $inspect(svgConfig)
