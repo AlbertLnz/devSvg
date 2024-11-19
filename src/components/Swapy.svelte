@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition'
 	import { createSwapy, type Swapy } from 'swapy'
 	import { onMount } from 'svelte'
 	import { devDependencies } from '@/data/devDependencies'
@@ -37,6 +38,7 @@
 		<div class="container flex flex-col gap-y-4 p-4">
 			{#each selected as dependency, index}
 				<div
+					transition:fade={{ duration: 200 }}
 					class={`section-${index + 1} cursor-grab active:cursor-grabbing`}
 					data-swapy-slot={`${dependency.name}`}
 				>
